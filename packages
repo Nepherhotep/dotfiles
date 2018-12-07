@@ -7,3 +7,15 @@ feh
 # an advanced screenshot application
 flameshot
 
+# browser
+chromium
+
+# default editor
+emacs-nox
+
+# simple file manager
+pcmanfm
+
+# volume tool
+pavucontrol
+
