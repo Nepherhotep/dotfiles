@@ -239,7 +239,7 @@ client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
 # finds out, if available)
 bar {
 	position top
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
         #font pango:Font Awesome 5 Free 8
         colors {
                 background $bg-color
