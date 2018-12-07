@@ -16,6 +16,9 @@ emacs-nox
 # simple file manager
 pcmanfm
 
-# volume tool
+## VOLUME ###
+# gui volume tool
 pavucontrol
 
+# pulse audio CLI used by i3
+ponymix
