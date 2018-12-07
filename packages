@@ -1,0 +1,9 @@
+# application to fix tearing issues
+compton
+
+# lightweight image viewer
+feh
+
+# an advanced screenshot application
+flameshot
+
