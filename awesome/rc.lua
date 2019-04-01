@@ -191,7 +191,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[2])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -297,7 +297,7 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey, }, "Print", function () awful.util.spawn("flameshot gui") end,
               {description = "Capture screen", group = "layout"}),
-    awful.key({ modkey, "Shift"}, "l", function () awful.util.spawn("xlock -mode space") end,
+    awful.key({ modkey}, "d", function () awful.util.spawn("xscreensaver-command -lock") end,
               {description = "lock screen", group = "layout"}),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -591,7 +591,7 @@ awful.rules.rules = {
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
-    -- if not awesome.startup then awful.client.setslave(c) end
+    if not awesome.startup then awful.client.setslave(c) end
 
     if awesome.startup and
       not c.size_hints.user_position
@@ -671,6 +671,7 @@ end
 
 -- autostart
 run_once('nm-applet')
+run_once("xscreensaver -no-splash")
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
