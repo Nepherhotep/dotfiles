@@ -213,7 +213,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
     s.mybattery = wibox.widget.textbox()
-    vicious.register(s.mybattery, vicious.widgets.bat, "[ $2%]", 30, "BAT0")
+    vicious.register(s.mybattery, vicious.widgets.bat, "|| chg:$1$2%, est:$3 ||", 30, "BAT0")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
