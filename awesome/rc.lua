@@ -108,7 +108,9 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-			     { "browser", conf.browser },
+			     { "chromium", "chromium" },
+			     { "alina chromium", "chromium --profile-directory=Alina" },
+			     { "firefox", "firefox" },
 			     { "videos", 'pcmanfm -n /media/alex/Media/Videos' },
 			     { "open terminal", terminal }
                           }
