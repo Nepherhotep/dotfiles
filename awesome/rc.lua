@@ -494,6 +494,10 @@ globalkeys = awful.util.table.join(globalkeys,
    awful.key({}, "XF86Launch8", function () switch_to_tag( 4 ) end),
    awful.key({}, "XF86Launch9", function () switch_to_tag( 5 ) end),
 
+   -- Backlight
+   awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell('xbacklight -dec 10') end),
+   awful.key({}, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell('xbacklight -inc 10') end),
+
    -- Ask before poweroff
    awful.key({}, "XF86PowerOff", function ()
      --	 awful.util.spawn_with_shell('zenity --question --text "Power off?" --default-cancel && poweroff')
