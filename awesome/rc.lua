@@ -683,6 +683,7 @@ end
 run_once('nm-applet')
 run_once("xscreensaver -no-splash")
 run_once("copyq")
+run_once("imwheel")
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
