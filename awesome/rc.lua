@@ -111,7 +111,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 			     { "chromium", "chromium --profile-directory=Alexey" },
 			     { "alina chromium", "chromium --profile-directory=Alina" },
 			     { "firefox", "firefox" },
-			     { "file manager", 'nautilus' },
+			     { "file manager", 'pcmanfm' },
+			     { "scanner", "simple-scan" },
 			     { "open terminal", terminal }
                           }
 		       })
