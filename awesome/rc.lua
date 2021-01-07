@@ -114,6 +114,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 			     { "firefox", "firefox" },
 			     { "file manager", 'pcmanfm' },
 			     { "scanner", "simple-scan" },
+			     { "steam", "flatpak run com.valvesoftware.Steam" },
 			     { "open terminal", terminal }
                           }
 		       })
