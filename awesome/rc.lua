@@ -14,6 +14,7 @@ local conf = require('conf')
 local vicious = require('vicious')
 local lain = require('lain')
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local volumearc_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
@@ -240,6 +241,13 @@ awful.screen.connect_for_each_screen(function(s)
             	program = 'xbacklight',
             	step = 10,        
             },
+	    volumearc_widget({
+	        button_press = function(_, _, _, button)   -- Overwrites the button press behaviour to open pavucontrol when clicked
+	           if (button == 1) then
+	       	       awful.spawn('pavucontrol --tab=3', false)
+	           end
+    	        end,
+		path_to_icon = "/usr/share/icons/Adwaita/scalable/status/audio-volume-high-symbolic.svg"}),
 	    s.mybattery,
             mytextclock,
             s.mylayoutbox,
