@@ -13,6 +13,7 @@ local alsawidget = require('alsawidget')
 local conf = require('conf')
 local vicious = require('vicious')
 local lain = require('lain')
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
@@ -234,6 +235,11 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+	    brightness_widget{
+		type = 'arc',
+            	program = 'xbacklight',
+            	step = 10,        
+            },
 	    s.mybattery,
             mytextclock,
             s.mylayoutbox,
@@ -498,8 +504,12 @@ globalkeys = awful.util.table.join(globalkeys,
    awful.key({}, "XF86Launch9", function () switch_to_tag( 5 ) end),
 
    -- Backlight
-   awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell('xbacklight -dec 10') end),
-   awful.key({}, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell('xbacklight -inc 10') end),
+   awful.key({}, "XF86MonBrightnessDown", function () brightness_widget:dec() end),
+   awful.key({}, "XF86MonBrightnessUp", function () brightness_widget:inc() end),
+
+   -- old school brighness change
+   -- awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell('xbacklight -dec 10') end),
+   -- awful.key({}, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell('xbacklight -inc 10') end),
 
    -- Ask before poweroff
    awful.key({}, "XF86PowerOff", function ()
